@@ -1,33 +1,33 @@
 {
-  "name": "beapp/pusher-client-firebase",
-  "description": "Firebase client for pusher library",
-  "type": "library",
-  "license": "MIT",
-  "version": "0.0.1",
-  "keywords": [
-    "push",
-    "notification",
-    "symfony",
-    "firebase"
-  ],
-  "authors": [
-    {
-      "name": "Tanguy Reviller",
-      "email": "t.reviller@beapp.fr"
+    "name": "beapp/pusher-client-firebase",
+    "description": "Firebase client for pusher library",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.0",
+    "keywords": [
+        "push",
+        "notification",
+        "symfony",
+        "firebase"
+    ],
+    "authors": [
+        {
+            "name": "Tanguy Reviller",
+            "email": "t.reviller@beapp.fr"
+        },
+        {
+            "name": "Damien Villeneuve",
+            "email": "d.villeneuve@beapp.fr"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.3"
     },
-    {
-      "name": "Damien Villeneuve",
-      "email": "d.villeneuve@beapp.fr"
+    "autoload": {
+        "psr-4": {
+            "Beapp\\Push\\Client\\Firebase\\": ""
+        }
     }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "ext-json": "*",
-    "guzzlehttp/guzzle": "^6.3"
-  },
-  "autoload": {
-    "psr-4": {
-      "Beapp\\Push\\Client\\Firebase\\": ""
-    }
-  }
 }
