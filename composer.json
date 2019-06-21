@@ -29,17 +29,20 @@
     "ext-json": "*",
     "psr/log": "^1.0",
     "symfony/translation": "3.*||4.*",
-    "symfony/routing": "3.*||4.*"
+    "symfony/routing": "3.*||4.*",
+    "guzzlehttp/guzzle": "^6.3"
   },
   "require-dev": {
     "symplify/monorepo-builder": "^4.7"
   },
   "autoload": {
     "psr-4": {
-      "Beapp\\Push\\Core\\": "packages/Core/"
+      "Beapp\\Push\\Core\\": "packages/Core/",
+      "Beapp\\Push\\Client\\Firebase\\": "packages/ClientFirebase"
     }
   },
   "replace": {
-    "beapp/push-core": "self.version"
+    "beapp/pusher-core": "self.version",
+    "beapp/pusher-client-firebase": "self.version"
   }
 }
