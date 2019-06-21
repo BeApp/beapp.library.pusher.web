@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83b8912cd572849a22e7ae869460e079",
+    "content-hash": "e94c25d84f72f0ecdf98dd46f91861fa",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -965,36 +965,29 @@
             "time": "2019-01-14T23:55:14+00:00"
         },
         {
-            "name": "nette/utils",
-            "version": "v2.5.3",
+            "name": "nette/finder",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nette/utils.git",
-                "reference": "17b9f76f2abd0c943adfb556e56f2165460b15ce"
+                "url": "https://github.com/nette/finder.git",
+                "reference": "6be1b83ea68ac558aff189d640abe242e0306fe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/17b9f76f2abd0c943adfb556e56f2165460b15ce",
-                "reference": "17b9f76f2abd0c943adfb556e56f2165460b15ce",
+                "url": "https://api.github.com/repos/nette/finder/zipball/6be1b83ea68ac558aff189d640abe242e0306fe2",
+                "reference": "6be1b83ea68ac558aff189d640abe242e0306fe2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
+                "nette/utils": "^2.4 || ~3.0.0",
+                "php": ">=7.1"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "nette/tester": "~2.0",
+                "nette/tester": "^2.0",
                 "tracy/tracy": "^2.3"
-            },
-            "suggest": {
-                "ext-gd": "to use Image",
-                "ext-iconv": "to use Strings::webalize() and toAscii()",
-                "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
-                "ext-json": "to use Nette\\Utils\\Json",
-                "ext-mbstring": "to use Strings::lower() etc...",
-                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
             },
             "type": "library",
             "extra": {
@@ -1005,9 +998,6 @@
             "autoload": {
                 "classmap": [
                     "src/"
-                ],
-                "files": [
-                    "src/loader.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1026,7 +1016,73 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "? Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "description": "? Nette Finder: find files and directories with an intuitive API.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "filesystem",
+                "glob",
+                "iterator",
+                "nette"
+            ],
+            "time": "2019-02-28T18:13:25+00:00"
+        },
+        {
+            "name": "nette/utils",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/utils.git",
+                "reference": "bd961f49b211997202bda1d0fbc410905be370d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/utils/zipball/bd961f49b211997202bda1d0fbc410905be370d4",
+                "reference": "bd961f49b211997202bda1d0fbc410905be370d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "nette/tester": "~2.0",
+                "tracy/tracy": "^2.3"
+            },
+            "suggest": {
+                "ext-gd": "to use Image",
+                "ext-iconv": "to use Strings::webalize() and toAscii()",
+                "ext-intl": "to use Strings::webalize(), toAscii(), normalize() and compare()",
+                "ext-json": "to use Nette\\Utils\\Json",
+                "ext-mbstring": "to use Strings::lower() etc...",
+                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "🛠 Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
             "homepage": "https://nette.org",
             "keywords": [
                 "array",
@@ -1044,7 +1100,7 @@
                 "utility",
                 "validation"
             ],
-            "time": "2018-09-18T10:22:16+00:00"
+            "time": "2019-03-22T01:00:30+00:00"
         },
         {
             "name": "phar-io/version",
@@ -2277,62 +2333,6 @@
             "time": "2019-06-13T11:15:36+00:00"
         },
         {
-            "name": "symfony/templating",
-            "version": "v4.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/templating.git",
-                "reference": "b0c5295d09dfbeae3bd3f52990468587ed82785c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/templating/zipball/b0c5295d09dfbeae3bd3f52990468587ed82785c",
-                "reference": "b0c5295d09dfbeae3bd3f52990468587ed82785c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/polyfill-ctype": "~1.8"
-            },
-            "require-dev": {
-                "psr/log": "~1.0"
-            },
-            "suggest": {
-                "psr/log-implementation": "For using debug logging in loaders"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Templating\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Templating Component",
-            "homepage": "https://symfony.com",
-            "time": "2019-05-30T16:10:05+00:00"
-        },
-        {
             "name": "symfony/yaml",
             "version": "v4.3.1",
             "source": {
@@ -2393,31 +2393,30 @@
         },
         {
             "name": "symplify/monorepo-builder",
-            "version": "v4.8.0",
+            "version": "v6.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Symplify/MonorepoBuilder.git",
-                "reference": "3fc870c85a60f7d1f7e916a65a0f9aee77604890"
+                "reference": "3b4377d4bdfd93e17609e9605160df2f463bc282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Symplify/MonorepoBuilder/zipball/3fc870c85a60f7d1f7e916a65a0f9aee77604890",
-                "reference": "3fc870c85a60f7d1f7e916a65a0f9aee77604890",
+                "url": "https://api.github.com/repos/Symplify/MonorepoBuilder/zipball/3b4377d4bdfd93e17609e9605160df2f463bc282",
+                "reference": "3b4377d4bdfd93e17609e9605160df2f463bc282",
                 "shasum": ""
             },
             "require": {
-                "composer/composer": "^1.6",
-                "nette/utils": "^2.5",
+                "composer/composer": "^1.8",
+                "nette/utils": "^2.5|^3.0",
                 "phar-io/version": "^2.0",
                 "php": "^7.1",
-                "symfony/console": "^3.4|^4.0",
-                "symfony/dependency-injection": "^3.4|^4.0",
-                "symfony/finder": "^3.4|^4.0",
-                "symplify/package-builder": "^4.8",
-                "thecodingmachine/safe": "^0.1.3"
+                "symfony/console": "^3.4|^4.2",
+                "symfony/dependency-injection": "^3.4.10|^4.2",
+                "symfony/finder": "^3.4|^4.2",
+                "symplify/package-builder": "^6.0.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.3"
+                "phpunit/phpunit": "^7.5|^8.0"
             },
             "bin": [
                 "bin/monorepo-builder"
@@ -2425,13 +2424,14 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.8-dev"
+                    "dev-master": "6.1-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symplify\\MonorepoBuilder\\": "src",
                     "Symplify\\MonorepoBuilder\\Split\\": "packages/Split/src",
+                    "Symplify\\MonorepoBuilder\\Release\\": "packages/Release/src",
                     "Symplify\\MonorepoBuilder\\Init\\": "packages/Init/src"
                 }
             },
@@ -2440,41 +2440,41 @@
                 "MIT"
             ],
             "description": "Not only Composer tools to build a Monorepo.",
-            "time": "2018-09-15T14:03:46+00:00"
+            "time": "2019-06-11T10:25:42+00:00"
         },
         {
             "name": "symplify/package-builder",
-            "version": "v4.8.0",
+            "version": "v6.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Symplify/PackageBuilder.git",
-                "reference": "b725936b7046852a9ab15e408ee4cd84c6be2faa"
+                "reference": "eb51eacbe57f6dfe18278ce0783eb45f9d219d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Symplify/PackageBuilder/zipball/b725936b7046852a9ab15e408ee4cd84c6be2faa",
-                "reference": "b725936b7046852a9ab15e408ee4cd84c6be2faa",
+                "url": "https://api.github.com/repos/Symplify/PackageBuilder/zipball/eb51eacbe57f6dfe18278ce0783eb45f9d219d15",
+                "reference": "eb51eacbe57f6dfe18278ce0783eb45f9d219d15",
                 "shasum": ""
             },
             "require": {
-                "nette/utils": "^2.5",
+                "nette/finder": "^2.4",
+                "nette/utils": "^2.5|^3.0",
                 "php": "^7.1",
-                "symfony/config": "^3.4|^4.0",
-                "symfony/console": "^3.4|^4.0",
-                "symfony/debug": "^3.4|^4.0",
-                "symfony/dependency-injection": "^3.4|^4.0",
-                "symfony/finder": "^3.4|^4.0",
-                "symfony/http-kernel": "^3.4|^4.0",
-                "symfony/yaml": "^3.4|^4.0",
-                "thecodingmachine/safe": "^0.1.3"
+                "symfony/config": "^3.4|^4.2",
+                "symfony/console": "^3.4|^4.2",
+                "symfony/debug": "^3.4|^4.2",
+                "symfony/dependency-injection": "^3.4.10|^4.2",
+                "symfony/finder": "^3.4|^4.2",
+                "symfony/http-kernel": "^3.4|^4.2",
+                "symfony/yaml": "^3.4|^4.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.3"
+                "phpunit/phpunit": "^7.5|^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.8-dev"
+                    "dev-master": "6.1-dev"
                 }
             },
             "autoload": {
@@ -2487,139 +2487,7 @@
                 "MIT"
             ],
             "description": "Dependency Injection, Console and Kernel toolkit for Symplify packages.",
-            "time": "2018-09-15T13:22:18+00:00"
-        },
-        {
-            "name": "thecodingmachine/safe",
-            "version": "v0.1.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thecodingmachine/safe.git",
-                "reference": "9a4dbc54e397e0bfb152f4b38f8a03040a1e9e3e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/9a4dbc54e397e0bfb152f4b38f8a03040a1e9e3e",
-                "reference": "9a4dbc54e397e0bfb152f4b38f8a03040a1e9e3e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^0.10.3",
-                "squizlabs/php_codesniffer": "^3.2",
-                "thecodingmachine/phpstan-strict-rules": "^0.10.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Safe\\": [
-                        "lib/",
-                        "generated/"
-                    ]
-                },
-                "files": [
-                    "generated/apache.php",
-                    "generated/apc.php",
-                    "generated/apcu.php",
-                    "generated/array.php",
-                    "generated/bzip2.php",
-                    "generated/classobj.php",
-                    "generated/com.php",
-                    "generated/cubrid.php",
-                    "generated/curl.php",
-                    "generated/datetime.php",
-                    "generated/dir.php",
-                    "generated/eio.php",
-                    "generated/errorfunc.php",
-                    "generated/exec.php",
-                    "generated/fileinfo.php",
-                    "generated/filesystem.php",
-                    "generated/filter.php",
-                    "generated/fpm.php",
-                    "generated/ftp.php",
-                    "generated/funchand.php",
-                    "generated/gmp.php",
-                    "generated/gnupg.php",
-                    "generated/hash.php",
-                    "generated/ibase.php",
-                    "generated/ibmDb2.php",
-                    "generated/iconv.php",
-                    "generated/image.php",
-                    "generated/imap.php",
-                    "generated/info.php",
-                    "generated/ingres-ii.php",
-                    "generated/inotify.php",
-                    "generated/json.php",
-                    "generated/ldap.php",
-                    "generated/libevent.php",
-                    "generated/libxml.php",
-                    "generated/lzf.php",
-                    "generated/mailparse.php",
-                    "generated/mbstring.php",
-                    "generated/misc.php",
-                    "generated/msql.php",
-                    "generated/mssql.php",
-                    "generated/mysql.php",
-                    "generated/mysqli.php",
-                    "generated/mysqlndMs.php",
-                    "generated/mysqlndQc.php",
-                    "generated/network.php",
-                    "generated/oci8.php",
-                    "generated/opcache.php",
-                    "generated/openssl.php",
-                    "generated/outcontrol.php",
-                    "generated/password.php",
-                    "generated/pcntl.php",
-                    "generated/pcre.php",
-                    "generated/pdf.php",
-                    "generated/pgsql.php",
-                    "generated/posix.php",
-                    "generated/ps.php",
-                    "generated/pspell.php",
-                    "generated/readline.php",
-                    "generated/rrd.php",
-                    "generated/sem.php",
-                    "generated/session.php",
-                    "generated/shmop.php",
-                    "generated/simplexml.php",
-                    "generated/sockets.php",
-                    "generated/sodium.php",
-                    "generated/solr.php",
-                    "generated/spl.php",
-                    "generated/sqlsrv.php",
-                    "generated/ssdeep.php",
-                    "generated/ssh2.php",
-                    "generated/stats.php",
-                    "generated/stream.php",
-                    "generated/strings.php",
-                    "generated/swoole.php",
-                    "generated/uodbc.php",
-                    "generated/uopz.php",
-                    "generated/url.php",
-                    "generated/var.php",
-                    "generated/xdiff.php",
-                    "generated/xml.php",
-                    "generated/xmlrpc.php",
-                    "generated/yaml.php",
-                    "generated/yaz.php",
-                    "generated/zip.php",
-                    "generated/zlib.php",
-                    "lib/special_cases.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
-            "time": "2019-04-17T16:09:50+00:00"
+            "time": "2019-06-07T21:09:52+00:00"
         }
     ],
     "aliases": [],

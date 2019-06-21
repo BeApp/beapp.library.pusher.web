@@ -33,7 +33,7 @@
     "guzzlehttp/guzzle": "^6.3"
   },
   "require-dev": {
-    "symplify/monorepo-builder": "^4.7"
+    "symplify/monorepo-builder": "^6.0"
   },
   "autoload": {
     "psr-4": {
