@@ -1,0 +1,45 @@
+{
+  "name": "beapp/pusher",
+  "version": "0.0.1",
+  "type": "library",
+  "keywords": [
+    "push",
+    "notification",
+    "symfony"
+  ],
+  "authors": [
+    {
+      "name": "Tanguy Reviller",
+      "email": "t.reviller@beapp.fr"
+    },
+    {
+      "name": "Damien Villeneuve",
+      "email": "d.villeneuve@beapp.fr"
+    }
+  ],
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "description": "Push library for Symfony project",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "psr/log": "^1.0",
+    "symfony/translation": "3.*||4.*",
+    "symfony/routing": "3.*||4.*"
+  },
+  "require-dev": {
+    "symplify/monorepo-builder": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Beapp\\Push\\Core\\": "packages/Core/"
+    }
+  },
+  "replace": {
+    "beapp/push-core": "self.version"
+  }
+}
