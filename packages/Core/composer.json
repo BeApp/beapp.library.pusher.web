@@ -4,11 +4,7 @@
     "type": "library",
     "license": "MIT",
     "version": "0.1.0",
-    "keywords": [
-        "push",
-        "notification",
-        "symfony"
-    ],
+    "keywords": ["push", "notification", "symfony"],
     "authors": [
         {
             "name": "Tanguy Reviller",
