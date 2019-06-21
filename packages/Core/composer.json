@@ -1,33 +1,33 @@
 {
-  "name": "beapp/pusher-core",
-  "description": "Core pusher library",
-  "type": "library",
-  "license": "MIT",
-  "version": "0.0.1",
-  "keywords": [
-    "push",
-    "notification",
-    "symfony"
-  ],
-  "authors": [
-    {
-      "name": "Tanguy Reviller",
-      "email": "t.reviller@beapp.fr"
+    "name": "beapp/pusher-core",
+    "description": "Core pusher library",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.0",
+    "keywords": [
+        "push",
+        "notification",
+        "symfony"
+    ],
+    "authors": [
+        {
+            "name": "Tanguy Reviller",
+            "email": "t.reviller@beapp.fr"
+        },
+        {
+            "name": "Damien Villeneuve",
+            "email": "d.villeneuve@beapp.fr"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "psr/log": "^1.0",
+        "symfony/translation": "3.*||4.*",
+        "symfony/routing": "3.*||4.*"
     },
-    {
-      "name": "Damien Villeneuve",
-      "email": "d.villeneuve@beapp.fr"
+    "autoload": {
+        "psr-4": {
+            "Beapp\\Push\\Core\\": ""
+        }
     }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "psr/log": "^1.0",
-    "symfony/translation": "3.*||4.*",
-    "symfony/routing": "3.*||4.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Beapp\\Push\\Core\\": ""
-    }
-  }
 }
