@@ -1,6 +1,6 @@
 <?php
 
-namespace Beapp\Push\Core\Client\Firebase;
+namespace Beapp\Push\Client\Firebase;
 
 use Beapp\Push\Core\Client\PushClient;
 use Beapp\Push\Core\Push;
