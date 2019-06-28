@@ -30,6 +30,6 @@ class DirectPushTransport implements PushTransport
      */
     public function sendPush(Push $push): Push
     {
-        $this->client->sendPush($push);
+        return $this->client->sendPush($push);
     }
 }
