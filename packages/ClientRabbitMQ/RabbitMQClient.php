@@ -23,10 +23,10 @@ class RabbitMQClient implements PushClient
 
     /**
      * @param Push $push
-     * @return Push
+     * @return mixed The result of the sending
      * @throws PushException
      */
-    public function sendPush(Push $push): Push
+    public function sendPush(Push $push)
     {
         try{
             $this->producer->publish(json_encode($push->jsonSerialize()));

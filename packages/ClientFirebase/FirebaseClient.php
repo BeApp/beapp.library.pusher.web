@@ -30,24 +30,32 @@ class FirebaseClient implements PushClient
 
     /**
      * @param Push $push
-     * @return Push
+     * @return mixed The result of the sending
      * @throws PushException
      */
-    public function sendPush(Push $push): Push
+    public function sendPush(Push $push)
     {
         $message = $this->buildMessage($push);
         $message['notification'] = $this->buildNotification($push);
 
-        $this->client->post(
-            $this->getApiUrl(),
-            [
-                'headers' => [
-                    'Authorization' => sprintf('key=%s', $this->apiKey),
-                    'Content-Type' => 'application/json'
-                ],
-                'body' => json_encode($message)
-            ]
-        );
+        try {
+            $response = $this->client->post(
+                $this->getApiUrl(),
+                [
+                    'headers' => [
+                        'Authorization' => sprintf('key=%s', $this->apiKey),
+                        'Content-Type' => 'application/json'
+                    ],
+                    'body' => json_encode($message)
+                ]
+            );
+
+            $responseContent = $response->getBody()->getContents();
+
+            return \GuzzleHttp\json_decode($responseContent);
+        } catch (\Exception $e) {
+            throw new PushException("Couldn't send push to " . join(',', $push->getRecipientsTokens()), 0, $e);
+        }
     }
 
     /**

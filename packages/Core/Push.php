@@ -60,8 +60,8 @@ class Push
         $push = new self(
             $data['title'],
             $data['body'],
-            $data['recipientsTokens'],
-            $data['customData']
+            $data['customData'],
+            $data['recipientsTokens']
         );
 
         foreach (['recipientTopic', 'badge', 'icon', 'color', 'sound', 'clickAction', 'tag', 'ttl'] as $prop) {

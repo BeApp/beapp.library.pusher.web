@@ -24,10 +24,12 @@ class NoopPushTransport implements PushTransport
         $this->logger = $logger;
     }
 
-    public function sendPush(Push $push): Push
+    /**
+     * @param Push $push
+     * @return mixed The result of the sending
+     */
+    public function sendPush(Push $push)
     {
         $this->logger->debug("NOOP sending push", ['push' => $push]);
-
-        return $push;
     }
 }
