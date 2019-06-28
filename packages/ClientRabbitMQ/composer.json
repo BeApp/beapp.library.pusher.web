@@ -1,0 +1,28 @@
+{
+    "name": "beapp/pusher-client-rabbitmq",
+    "description": "RabbitMQ client for pusher library",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.2",
+    "keywords": ["push", "notification", "symfony", "rabbitmq"],
+    "authors": [
+        {
+            "name": "Tanguy Reviller",
+            "email": "t.reviller@beapp.fr"
+        },
+        {
+            "name": "Damien Villeneuve",
+            "email": "d.villeneuve@beapp.fr"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "php-amqplib/rabbitmq-bundle": "^1.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beapp\\Push\\Client\\RabbitMQ\\": ""
+        }
+    }
+}

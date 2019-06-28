@@ -8,3 +8,4 @@ parameters:
   directories_to_repositories:
     packages/Core: 'git@github.com:BeApp/beapp.library.pusher-core.web.git'
     packages/ClientFirebase: 'git@github.com:BeApp/beapp.library.pusher-client-firebase.web.git'
+    packages/ClientRabbitMQ: 'git@github.com:BeApp/beapp.library.pusher-client-rabbitmq.web.git'
