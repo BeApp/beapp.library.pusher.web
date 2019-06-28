@@ -13,8 +13,8 @@ interface PushTransport
 {
     /**
      * @param Push $push
-     * @return Push
+     * @return mixed The result of the sending
      * @throws PushException
      */
-    public function sendPush(Push $push): Push;
+    public function sendPush(Push $push);
 }

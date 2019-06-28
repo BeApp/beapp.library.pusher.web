@@ -25,10 +25,10 @@ class DirectPushTransport implements PushTransport
 
     /**
      * @param Push $push
-     * @return Push
+     * @return mixed The result of the sending
      * @throws PushException
      */
-    public function sendPush(Push $push): Push
+    public function sendPush(Push $push)
     {
         return $this->client->sendPush($push);
     }
