@@ -86,6 +86,6 @@ class PushService
             throw $e;
         }
 
-        return $result;
+        return $push;
     }
 }
