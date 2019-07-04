@@ -50,7 +50,7 @@ class FirebaseClientTest extends TestCase
 
         $this->expectException(PushException::class);
 
-        $result = $firebaseClient->sendPush($push);
+        $firebaseClient->sendPush($push);
     }
 
     public function getFirebaseClient(): FirebaseClient
