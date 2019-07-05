@@ -34,6 +34,6 @@ class RabbitMQClient implements PushClient
             throw new PushException($e->getMessage(), $e->getCode(), $e);
         }
 
-        return $push;
+        return true;
     }
 }

@@ -52,7 +52,7 @@ class FirebaseClient implements PushClient
 
             $responseContent = $response->getBody()->getContents();
 
-            return \GuzzleHttp\json_decode($responseContent);
+            return \GuzzleHttp\json_decode($responseContent, true);
         } catch (\Exception $e) {
             throw new PushException("Couldn't send push to " . join(',', $push->getRecipientsTokens()), 0, $e);
         }

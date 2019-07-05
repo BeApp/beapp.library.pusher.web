@@ -31,5 +31,7 @@ class NoopPushTransport implements PushTransport
     public function sendPush(Push $push)
     {
         $this->logger->debug("NOOP sending push", ['push' => $push]);
+
+        return null;
     }
 }

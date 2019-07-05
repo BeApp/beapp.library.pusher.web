@@ -64,7 +64,7 @@ class Push
             $data['recipientsTokens']
         );
 
-        foreach (['recipientTopic', 'badge', 'icon', 'color', 'sound', 'clickAction', 'tag', 'ttl'] as $prop) {
+        foreach (['recipientTopic', 'badge', 'icon', 'color', 'sound', 'clickAction', 'tag', 'ttlSeconds'] as $prop) {
             if (array_key_exists($prop, $data) && !is_null($data[$prop])
                 && property_exists(self::class, $prop)
             ) {

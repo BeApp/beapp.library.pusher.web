@@ -1,6 +1,6 @@
 {
   "name": "beapp/pusher",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "library",
   "keywords": [
     "push",
@@ -34,7 +34,8 @@
     "php-amqplib/rabbitmq-bundle": "^1.14"
   },
   "require-dev": {
-    "symplify/monorepo-builder": "^6.0"
+    "symplify/monorepo-builder": "^6.0",
+    "phpunit/phpunit": "^8.2"
   },
   "autoload": {
     "psr-4": {
