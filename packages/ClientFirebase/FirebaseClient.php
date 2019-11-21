@@ -5,6 +5,7 @@ namespace Beapp\Push\Client\Firebase;
 use Beapp\Push\Core\Client\PushClient;
 use Beapp\Push\Core\Push;
 use Beapp\Push\Core\PushException;
+use Beapp\Push\Core\PushResult;
 use GuzzleHttp\Client;
 
 class FirebaseClient implements PushClient
@@ -30,10 +31,10 @@ class FirebaseClient implements PushClient
 
     /**
      * @param Push $push
-     * @return mixed The result of the sending
+     * @return PushResult The result of the sending
      * @throws PushException
      */
-    public function sendPush(Push $push)
+    public function sendPush(Push $push): PushResult
     {
         $message = $this->buildMessage($push);
         $message['notification'] = $this->buildNotification($push);
@@ -50,9 +51,9 @@ class FirebaseClient implements PushClient
                 ]
             );
 
-            $responseContent = $response->getBody()->getContents();
+            $responseBody = \GuzzleHttp\json_decode($response->getBody()->getContents());
 
-            return \GuzzleHttp\json_decode($responseContent, true);
+            return new PushResult($push, PushResult::STATUS_SENT, $responseBody);
         } catch (\Exception $e) {
             throw new PushException("Couldn't send push to " . join(',', $push->getRecipientsTokens()), 0, $e);
         }

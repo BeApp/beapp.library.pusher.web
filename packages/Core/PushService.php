@@ -37,7 +37,8 @@ class PushService
         RouterInterface $router,
         TranslatorInterface $translator,
         bool $enabled
-    ) {
+    )
+    {
         $this->logger = $logger;
         $this->pushTransport = $enabled ? $pushTransport : new NoopPushTransport($logger);
         $this->router = $router;
@@ -51,10 +52,10 @@ class PushService
      * @param PushTemplate $pushTemplate
      * @param array|null $recipientsTokens
      *
-     * @return Push
+     * @return PushResult
      * @throws PushException
      */
-    public function sendPush(PushTemplate $pushTemplate, array $recipientsTokens = null): Push
+    public function sendPush(PushTemplate $pushTemplate, array $recipientsTokens = null): PushResult
     {
         $push = $pushTemplate->build($this->router, $this->translator);
 
@@ -68,7 +69,7 @@ class PushService
 
         //Don't send push without recipients
         if (empty($recipientsTokens)) {
-            return $push;
+            return new PushResult($push, PushResult::STATUS_ERROR, null, "Not recipients");
         }
 
         try {
@@ -78,6 +79,7 @@ class PushService
                 'result' => $result
             ]);
 
+            return $result;
         } catch (PushException $e) {
             $this->logger->error("Couldn't send push", [
                 'push' => $push,
@@ -85,7 +87,5 @@ class PushService
             ]);
             throw $e;
         }
-
-        return $push;
     }
 }
