@@ -3,6 +3,7 @@
 namespace Beapp\Push\Core\Transport;
 
 use Beapp\Push\Core\Push;
+use Beapp\Push\Core\PushResult;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -17,6 +18,7 @@ class NoopPushTransportTest extends TestCase
 
         $result = $transport->sendPush($push);
 
-        $this->assertNull($result);
+        $this->assertNotNull($result);
+        $this->assertEquals(PushResult::STATUS_SENT, $result->getStatus());
     }
 }

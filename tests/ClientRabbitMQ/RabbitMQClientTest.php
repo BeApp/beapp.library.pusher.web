@@ -4,6 +4,7 @@ namespace Beapp\Push\Client\RabbitMQ;
 
 use Beapp\Push\Core\Push;
 use Beapp\Push\Core\PushException;
+use Beapp\Push\Core\PushResult;
 use OldSound\RabbitMqBundle\RabbitMq\ProducerInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -19,7 +20,8 @@ class RabbitMQClientTest extends TestCase
 
         $result = $rabbitMQClient->sendPush(new Push('foo', 'bar', null, ['token']));
 
-        $this->assertEquals(true, $result);
+        $this->assertNotNull($result);
+        $this->assertEquals(PushResult::STATUS_SENDING, $result->getStatus());
     }
 
     public function testSendPush_throwException()

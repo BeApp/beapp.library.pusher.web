@@ -35,6 +35,7 @@ class RabbitMQClient implements PushClient
             throw new PushException($e->getMessage(), $e->getCode(), $e);
         }
 
+        // TODO We should add an option to handle Rabbitmq's RPC messages and return STATUS_SENT when the message was actually sent
         return new PushResult($push, PushResult::STATUS_SENDING);
     }
 }
