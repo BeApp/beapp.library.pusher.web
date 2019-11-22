@@ -1,52 +1,48 @@
 {
-  "name": "beapp/pusher",
-  "version": "0.1.5",
-  "type": "library",
-  "keywords": [
-    "push",
-    "notification",
-    "symfony"
-  ],
-  "authors": [
-    {
-      "name": "Tanguy Reviller",
-      "email": "t.reviller@beapp.fr"
+    "name": "beapp/pusher",
+    "version": "0.2.0",
+    "type": "library",
+    "description": "Push library for Symfony project",
+    "keywords": ["push", "notification", "symfony"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tanguy Reviller",
+            "email": "t.reviller@beapp.fr"
+        },
+        {
+            "name": "Damien Villeneuve",
+            "email": "d.villeneuve@beapp.fr"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.3",
+        "php": ">=7.1",
+        "php-amqplib/rabbitmq-bundle": "^1.14",
+        "psr/log": "^1.0",
+        "symfony/routing": "3.*||4.*",
+        "symfony/translation": "3.*||4.*"
     },
-    {
-      "name": "Damien Villeneuve",
-      "email": "d.villeneuve@beapp.fr"
+    "require-dev": {
+        "symplify/monorepo-builder": "^4.7",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beapp\\Push\\Client\\Firebase\\": "packages/ClientFirebase/",
+            "Beapp\\Push\\Client\\RabbitMQ\\": "packages/ClientRabbitMQ/",
+            "Beapp\\Push\\Core\\": "packages/Core/"
+        }
+    },
+    "replace": {
+        "beapp/pusher-core": "self.version",
+        "beapp/pusher-client-firebase": "self.version",
+        "beapp/pusher-client-rabbitmq": "self.version"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
+        }
     }
-  ],
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0-dev"
-    }
-  },
-  "description": "Push library for Symfony project",
-  "license": "MIT",
-  "require": {
-    "php": ">=7.1",
-    "ext-json": "*",
-    "psr/log": "^1.0",
-    "symfony/translation": "3.*||4.*",
-    "symfony/routing": "3.*||4.*",
-    "guzzlehttp/guzzle": "^6.3",
-    "php-amqplib/rabbitmq-bundle": "^1.14"
-  },
-  "require-dev": {
-    "symplify/monorepo-builder": "^6.0",
-    "phpunit/phpunit": "^8.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "Beapp\\Push\\Core\\": "packages/Core/",
-      "Beapp\\Push\\Client\\Firebase\\": "packages/ClientFirebase/",
-      "Beapp\\Push\\Client\\RabbitMQ\\": "packages/ClientRabbitMQ/"
-    }
-  },
-  "replace": {
-    "beapp/pusher-core": "self.version",
-    "beapp/pusher-client-firebase": "self.version",
-    "beapp/pusher-client-rabbitmq": "self.version"
-  }
 }
