@@ -1,6 +1,6 @@
 {
     "name": "beapp/pusher",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "type": "library",
     "description": "Push library for Symfony project",
     "keywords": ["push", "notification", "symfony"],
@@ -42,7 +42,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "0.2-dev"
         }
     }
 }

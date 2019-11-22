@@ -3,7 +3,7 @@
     "description": "Firebase client for pusher library",
     "type": "library",
     "license": "MIT",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "keywords": ["push", "notification", "symfony", "firebase"],
     "authors": [
         {
@@ -19,7 +19,7 @@
         "php": ">=7.1",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.3",
-        "beapp/pusher-core": "^0.1.0"
+        "beapp/pusher-core": "^0.2.0"
     },
     "autoload": {
         "psr-4": {
