@@ -4,6 +4,7 @@ namespace Beapp\Push\Core\Client;
 
 use Beapp\Push\Core\Push;
 use Beapp\Push\Core\PushException;
+use Beapp\Push\Core\PushResult;
 
 /**
  * Interface PushClient
@@ -14,8 +15,8 @@ interface PushClient
     /**
      * @param Push $push
      *
-     * @return mixed The result of the sending
+     * @return PushResult The result of the sending
      * @throws PushException
      */
-    public function sendPush(Push $push);
+    public function sendPush(Push $push): PushResult;
 }

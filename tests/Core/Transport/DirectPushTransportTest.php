@@ -5,6 +5,7 @@ namespace Beapp\Push\Core\Transport;
 use Beapp\Push\Core\Client\PushClient;
 use Beapp\Push\Core\Push;
 use Beapp\Push\Core\PushException;
+use Beapp\Push\Core\PushResult;
 use PHPUnit\Framework\TestCase;
 
 class DirectPushTransportTest extends TestCase
@@ -16,13 +17,14 @@ class DirectPushTransportTest extends TestCase
         $pushClient = $this->createMock(PushClient::class);
         $pushClient->expects($this->any())
                     ->method('sendPush')
-                    ->willReturn('Sent');
+                    ->willReturn(new PushResult($push, PushResult::STATUS_SENT));
 
         $pushTransport = new DirectPushTransport($pushClient);
 
         $result = $pushTransport->sendPush($push);
 
-        $this->assertEquals('Sent', $result);
+        $this->assertNotNull($result);
+        $this->assertEquals(PushResult::STATUS_SENT, $result->getStatus());
     }
 
     public function testSendPush_throwException()

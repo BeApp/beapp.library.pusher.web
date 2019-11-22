@@ -4,6 +4,7 @@ namespace Beapp\Push\Client\Firebase;
 
 use Beapp\Push\Core\Push;
 use Beapp\Push\Core\PushException;
+use Beapp\Push\Core\PushResult;
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -33,8 +34,8 @@ class FirebaseClientTest extends TestCase
 
         $result = $firebaseClient->sendPush($push);
 
-        $this->assertIsArray($result);
-        $this->assertArrayHasKey('response', $result);
+        $this->assertNotNull($result);
+        $this->assertEquals(PushResult::STATUS_SENT, $result->getStatus());
     }
 
     public function testSendPush_throwException()
