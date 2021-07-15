@@ -67,11 +67,6 @@ class PushService
 
         $push->setRecipientsTokens($recipientsTokens);
 
-        //Don't send push without recipients
-        if (empty($recipientsTokens)) {
-            return new PushResult($push, PushResult::STATUS_ERROR, null, "Not recipients");
-        }
-
         try {
             $result = $this->pushTransport->sendPush($push);
 

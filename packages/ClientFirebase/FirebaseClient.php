@@ -21,7 +21,7 @@ class FirebaseClient implements PushClient
      * FirebaseClient constructor.
      *
      * @param string $apiKey
-     * @param Client $client
+     * @param Client|null $client
      */
     public function __construct(string $apiKey, ?Client $client)
     {
@@ -75,7 +75,7 @@ class FirebaseClient implements PushClient
             $message['time_to_live'] = $push->getTtlSeconds();
         }
         if (!is_null($push->getRecipientTopic())) {
-            $message['to'] = $push->getRecipientTopic();
+            $message['to'] = sprintf('/topics/%s', $push->getRecipientTopic());
         } elseif (!empty($push->getRecipientsTokens())) {
             if (count($push->getRecipientsTokens()) == 1) {
                 $message['to'] = $push->getRecipientsTokens()[0];
