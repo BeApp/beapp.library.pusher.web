@@ -3,7 +3,7 @@
     "description": "RabbitMQ client for pusher library",
     "type": "library",
     "license": "MIT",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "keywords": ["push", "notification", "symfony", "rabbitmq"],
     "authors": [
         {
@@ -19,7 +19,7 @@
         "php": ">=7.1",
         "ext-json": "*",
         "php-amqplib/rabbitmq-bundle": "^1.14",
-        "beapp/pusher-core": "^0.2.0"
+        "beapp/pusher-core": "^0.2.1"
     },
     "autoload": {
         "psr-4": {
