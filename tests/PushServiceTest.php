@@ -12,13 +12,27 @@ use Symfony\Component\Translation\TranslatorInterface;
 
 class PushServiceTest extends TestCase
 {
-    public function testSendPush_noSend()
+    public function testSendPush_emptyRecipients()
     {
         $pushTransportMock = $this->createMock(DirectPushTransport::class);
-        $pushTransportMock->expects($this->never())
+        $pushTransportMock->expects($this->once())
                         ->method('sendPush');
 
         $pushTemplate = $this->getPushTemplate();
+        $pushService = $this->getPushService($pushTransportMock);
+
+        $pushService->sendPush($pushTemplate, []);
+    }
+
+    public function testSendPush_sentWithTopic()
+    {
+        $pushTransportMock = $this->createMock(DirectPushTransport::class);
+        $pushTransportMock->expects($this->once())
+                        ->method('sendPush');
+
+        $push = new Push('foo', 'bar', null);
+        $push->setRecipientTopic('topic');
+        $pushTemplate = $this->getPushTemplate($push);
         $pushService = $this->getPushService($pushTransportMock);
 
         $pushService->sendPush($pushTemplate, []);
@@ -57,9 +71,9 @@ class PushServiceTest extends TestCase
         $this->assertEquals(PushResult::STATUS_SENT, $push->getStatus());
     }
 
-    public function getPushTemplate()
+    public function getPushTemplate(Push $push = null)
     {
-        $push = new Push('foo', 'bar', null);
+        $push = $push ?? new Push('foo', 'bar', null);
 
         $pushTemplate = $this->createMock(PushTemplate::class);
 
