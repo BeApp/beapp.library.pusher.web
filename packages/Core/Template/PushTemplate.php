@@ -4,7 +4,7 @@ namespace Beapp\Push\Core\Template;
 
 use Beapp\Push\Core\Push;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Interface PushTemplate

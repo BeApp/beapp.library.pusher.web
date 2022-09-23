@@ -7,7 +7,7 @@ use Beapp\Push\Core\Transport\NoopPushTransport;
 use Beapp\Push\Core\Transport\PushTransport;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class PushService

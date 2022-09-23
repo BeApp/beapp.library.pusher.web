@@ -3,7 +3,7 @@
     "description": "Firebase client for pusher library",
     "type": "library",
     "license": "MIT",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "keywords": ["push", "notification", "symfony", "firebase"],
     "authors": [
         {
@@ -13,13 +13,17 @@
         {
             "name": "Damien Villeneuve",
             "email": "d.villeneuve@beapp.fr"
+        },
+        {
+            "name": "Matthieu Picard",
+            "email": "m.picard@beapp.fr"
         }
     ],
     "require": {
         "php": ">=7.1",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.3",
-        "beapp/pusher-core": "^0.2.1"
+        "beapp/pusher-core": "^0.3.0"
     },
     "autoload": {
         "psr-4": {
